@@ -4,8 +4,10 @@ FILES= report.pdf \
 	scan/ \
 	render/
 
+XFILE = render/snow.par
+
 handin.tar: clean
-	tar cvf handin.tar $(FILES)
+	tar cvf handin.tar --exclude=$(XFILE) handin.tar $(FILES) 
 
 clean:
 	(cd saxpy; make clean)
